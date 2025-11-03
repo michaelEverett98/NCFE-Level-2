@@ -6,11 +6,7 @@
 
 import random as rd
 
-#numOfGuess = 1
-#userGuessInput = 0
-#randomNumber = rd.randint(1, 99)
-
-welcomeMessage = "Welcome to my random number guessing game! Please guess a number between 1 and 99 to begin. You get 5 guesses in total! Good luck."
+welcomeMessage = "Welcome to my random number guessing game! Please guess a number between 1 and 99 to begin. You get 10 guesses in total! Good luck."
 
 print(f"{welcomeMessage}\n{40 * '='}")
 
@@ -22,11 +18,9 @@ def guessingGame() :
 
     while userGuessInput != randomNumber :
             
-        #print(randomNumber)
-        #print(userGuessInput)
         playAgain = ()
 
-        if numOfGuess == 5 :
+        if numOfGuess == 10 :
             print(f"{40 * '-'}\nUnlucky! You were unable to guess the number this time, which was {randomNumber}. Better luck next time!")
             
             playAgain = input(f"{40 * '-'}\nWould you like to try again? y/n: ")
@@ -41,15 +35,15 @@ def guessingGame() :
             else :
                 playAgain = input("Invalid input, please enter y or n: ")
 
-        elif numOfGuess <= 5 and userGuessInput < randomNumber :
+        elif numOfGuess <= 10 and userGuessInput < randomNumber :
             
             numOfGuess += 1
-            userGuessInput = int(input(f"{40 * '-'}\nNot quite! Your guess is too small. Try again! You have {6 - numOfGuess} guesses remaining. "))
+            userGuessInput = int(input(f"{40 * '-'}\nNot quite! Your guess is too small. Try again! You have {11 - numOfGuess} guesses remaining. "))
 
-        elif numOfGuess <= 5 and userGuessInput > randomNumber :
+        elif numOfGuess <= 10 and userGuessInput > randomNumber :
             
             numOfGuess += 1
-            userGuessInput = int(input(f"{40 * '-'}\nNot quite! Your guess is too big. Try again! You have {6 - numOfGuess} guesses remaining. "))
+            userGuessInput = int(input(f"{40 * '-'}\nNot quite! Your guess is too big. Try again! You have {11 - numOfGuess} guesses remaining. "))
 
     else :
 
